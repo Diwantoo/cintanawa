@@ -16,7 +16,7 @@ const DEFAULT = {
   song: 'Perfect - Ed Sheeran',
   startDate: '2026-03-13',
   message:
-    'Jika aku harus memilih satu hal terindah dalam hidupku,\nmaka aku akan memilih kamu.\n\nKamu adalah rumah bagi segala rasa nyaman,\ntenang di tengah ributnya dunia,\ndan alasan mengapa aku selalu menantikan hari esok.\n\nSemoga semesta selalu menjaga langkahmu,\nkarena bahagiaku ada pada senyummu.\n\nI love you, more than words could ever explain.',
+    'lo tuh beneran yang paling gue mau, bukan lebay.\n\ntiap hari sama lo rasanya gak pernah bosen,\nbahkan berantem pun gue masih sayang lo.\n\nsemoga lo tau, gak ada orang lain yang bisa gantiin lo.\n\nI love you, serius.',
 };
 
 function loadConfig() {
@@ -75,20 +75,20 @@ function Section({ children, style }) {
 }
 
 const REASONS = [
-  { icon: '😊', text: 'Senyummu yang\nmenyinari hariku' },
-  { icon: '🤝', text: 'Selalu ada\ndi sampingku' },
-  { icon: '💬', text: 'Tawamu yang\nmembuatku bahagia' },
-  { icon: '🌙', text: 'Orang pertama\nyang kupikirkan' },
-  { icon: '🌺', text: 'Kecantikanmu\nluar dan dalam' },
-  { icon: '♾️', text: 'Cintamu yang\ntulus untukku' },
+  { icon: '😊', text: 'senyum lo yang\ngue kangenin tiap hari' },
+  { icon: '🤝', text: 'selalu ada\npas gue butuh' },
+  { icon: '💬', text: 'ketawa bareng lo\nitu healing banget' },
+  { icon: '🌙', text: 'lo yang pertama\ngue inget pas bangun tidur' },
+  { icon: '🌺', text: 'cantik luar dalem,\ngak ada lawannya' },
+  { icon: '♾️', text: 'cinta lo tulus\ngak pernah gue raguin' },
 ];
 
 const PROMISES = [
-  '✨ Selalu ada untukmu di setiap saat',
-  '🌟 Mencintaimu apa adanya',
-  '🌸 Membuat setiap harimu bermakna',
-  '💪 Menjadi sandaran terkuatmu',
-  '♾️ Mencintaimu selamanya',
+  '✨ gue bakal selalu ada, kapanpun lo butuh',
+  '🌟 gue sayang lo apa adanya, beneran',
+  '🌸 tiap hari sama lo mau gue bikin worth it',
+  '💪 lo bisa sandarin apapun ke gue',
+  '♾️ gak ada expiry date buat perasaan gue ke lo',
 ];
 
 export default function LoveLetter({ visible }) {
@@ -160,7 +160,7 @@ export default function LoveLetter({ visible }) {
           letterSpacing: '-1px',
           filter: 'drop-shadow(0 0 20px rgba(255,77,109,0.4))',
         }}>I Love You</h1>
-        <p style={{ fontFamily: "'Lora', serif", fontSize: '1.3rem', color: 'var(--text-soft)', marginBottom: 6 }}>Aku mencintaimu,</p>
+        <p style={{ fontFamily: "'Lora', serif", fontSize: '1.3rem', color: 'var(--text-soft)', marginBottom: 6 }}>jujur aja,</p>
         <p style={{
           fontFamily: "'Lora', serif",
           fontStyle: 'italic',
@@ -189,7 +189,7 @@ export default function LoveLetter({ visible }) {
 
       {/* ── Reasons ── */}
       <Section style={{ marginBottom: 48 }}>
-        <h2 style={s.sectionTitle}>Kenapa Aku Mencintaimu</h2>
+        <h2 style={s.sectionTitle}>Kenapa Gue Sayang Lo 🫶</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 14 }}>
           {REASONS.map((r, i) => (
             <ReasonCard key={i} icon={r.icon} text={r.text} delay={i * 0.08} />
@@ -199,7 +199,7 @@ export default function LoveLetter({ visible }) {
 
       {/* ── Counter ── */}
       <Section style={{ marginBottom: 48, textAlign: 'center' }}>
-        <h2 style={s.sectionTitle}>Sudah Bersamamu</h2>
+        <h2 style={s.sectionTitle}>Udah Bareng Lo Selama Ini ⏳</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 14 }}>
           {[
             { label: 'Hari', val: time.d },
@@ -284,7 +284,7 @@ export default function LoveLetter({ visible }) {
             fontFamily: "'Lora', serif", fontSize: '1.6rem', marginBottom: 24,
             background: 'linear-gradient(135deg, #ff85a1, #c77dff)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
-          }}>Janjiku Untukmu</h3>
+          }}>Janji Gue ke Lo 🤞</h3>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 360, margin: '0 auto', textAlign: 'left' }}>
             {PROMISES.map((p, i) => (
               <PromiseItem key={i} text={p} />
@@ -302,9 +302,9 @@ export default function LoveLetter({ visible }) {
           background: 'linear-gradient(135deg, #ff85a1, #ffd700, #c77dff)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           marginBottom: 12,
-        }}>Aku Cinta Kamu</h2>
-        <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.2rem', color: 'var(--text-soft)', marginBottom: 20 }}>Sekarang, besok, dan selamanya 💕</p>
-        <p style={{ fontFamily: "'Lora', serif", fontStyle: 'italic', fontSize: '1rem', color: 'var(--pink-mid)' }}>— Dengan sepenuh hati</p>
+        }}>Gue Cinta Lo 🫶</h2>
+        <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.2rem', color: 'var(--text-soft)', marginBottom: 20 }}>sekarang, besok, dan selamanya 💕</p>
+        <p style={{ fontFamily: "'Lora', serif", fontStyle: 'italic', fontSize: '1rem', color: 'var(--pink-mid)' }}>— dan ini serius, bukan lebay 😌</p>
       </Section>
 
       <footer style={{ textAlign: 'center', padding: '16px', color: 'rgba(255,133,161,0.4)', fontSize: '0.82rem' }}>
