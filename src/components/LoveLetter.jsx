@@ -230,24 +230,36 @@ export default function LoveLetter({ visible }) {
 
       {/* ── Song ── */}
       <Section style={{ marginBottom: 48 }}>
-        <div style={{ ...s.card, padding: '28px 30px', display: 'flex', alignItems: 'center', gap: 24, boxShadow: 'var(--glow-purple)', flexWrap: 'wrap' }}>
-          <div style={{
-            width: 90, height: 90, borderRadius: '50%', flexShrink: 0,
-            background: 'conic-gradient(from 0deg, #1a0010 0%,#ff4d6d 15%,#1a0010 30%,#c77dff 50%,#1a0010 65%,#ff85a1 80%,#1a0010 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            animation: 'spinVinyl 4s linear infinite',
-            boxShadow: '0 0 24px rgba(255,77,109,0.5)',
-            position: 'relative',
-          }}>
-            <span style={{ fontSize: '1.2rem', zIndex: 1 }}>🎵</span>
-            <span style={{ position: 'absolute', width: 20, height: 20, background: '#0d0008', borderRadius: '50%', border: '2px solid rgba(255,133,161,0.3)' }} />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
-            <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: 2, color: 'var(--pink-mid)' }}>Lagu Kita 🎶</span>
-            <span style={{ fontFamily: "'Lora', serif", fontSize: '1.3rem' }}>{cfg.song}</span>
-            <span style={{ fontFamily: "'Lora', serif", fontSize: '1rem', color: 'var(--text-soft)' }}>Because you are perfect to me 🎵</span>
-          </div>
+        <h2 style={s.sectionTitle}>Lagu Kita 🎵</h2>
+        <div style={{
+          position: 'relative',
+          borderRadius: 20,
+          overflow: 'hidden',
+          boxShadow: 'var(--glow-purple), var(--glow-pink)',
+          border: '1px solid rgba(199,125,255,0.3)',
+        }}>
+          <iframe
+            src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&rel=0&modestbranding=1&color=white"
+            title="Lagu Kita"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{
+              width: '100%',
+              height: '360px',
+              border: 'none',
+              display: 'block',
+            }}
+          />
         </div>
+        <p style={{
+          textAlign: 'center',
+          marginTop: 14,
+          fontFamily: "'Great Vibes', cursive",
+          fontSize: '1.5rem',
+          color: 'var(--text-soft)',
+        }}>
+          {cfg.song} 🎶
+        </p>
       </Section>
 
       {/* ── Photo Gallery ── */}
