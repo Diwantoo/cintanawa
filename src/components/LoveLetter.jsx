@@ -16,7 +16,7 @@ const DEFAULT = {
   song: 'Perfect - Ed Sheeran',
   startDate: '2026-03-13',
   message:
-    'Dari semua hal indah di dunia ini,\nkamu adalah yang paling berharga bagiku. 🌸\n\nSetiap hari bersamamu terasa seperti mimpi\nyang tak ingin aku akhiri. Terima kasih\nsudah hadir dan mewarnai hidupku. 💫',
+    'Jika aku harus memilih satu hal terindah dalam hidupku,\nmaka aku akan memilih kamu.\n\nKamu adalah rumah bagi segala rasa nyaman,\ntenang di tengah ributnya dunia,\ndan alasan mengapa aku selalu menantikan hari esok.\n\nSemoga semesta selalu menjaga langkahmu,\nkarena bahagiaku ada pada senyummu.\n\nI love you, more than words could ever explain.',
 };
 
 function loadConfig() {
@@ -115,7 +115,7 @@ export default function LoveLetter({ visible }) {
       backdropFilter: 'blur(12px)',
     },
     sectionTitle: {
-      fontFamily: "'Playfair Display', serif",
+      fontFamily: "'Cormorant Garamond', serif",
       fontSize: 'clamp(1.4rem, 4vw, 1.8rem)',
       textAlign: 'center',
       marginBottom: 28,
@@ -148,8 +148,8 @@ export default function LoveLetter({ visible }) {
       <header style={{ textAlign: 'center', padding: '70px 20px 40px' }}>
         <div style={{ fontSize: '4rem', display: 'block', marginBottom: 18, animation: 'roseFloat 3s ease-in-out infinite' }}>🌹</div>
         <h1 style={{
-          fontFamily: "'Playfair Display', serif",
-          fontSize: 'clamp(3rem, 10vw, 5.5rem)',
+          fontFamily: "'Great Vibes', cursive",
+          fontSize: 'clamp(3.5rem, 10vw, 6rem)',
           fontWeight: 700,
           background: 'linear-gradient(135deg, #ff85a1, #c77dff, #ff4d6d)',
           WebkitBackgroundClip: 'text',
@@ -160,9 +160,9 @@ export default function LoveLetter({ visible }) {
           letterSpacing: '-1px',
           filter: 'drop-shadow(0 0 20px rgba(255,77,109,0.4))',
         }}>I Love You</h1>
-        <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.3rem', color: 'var(--text-soft)', marginBottom: 6 }}>Aku mencintaimu,</p>
+        <p style={{ fontFamily: "'Lora', serif", fontSize: '1.3rem', color: 'var(--text-soft)', marginBottom: 6 }}>Aku mencintaimu,</p>
         <p style={{
-          fontFamily: "'Playfair Display', serif",
+          fontFamily: "'Lora', serif",
           fontStyle: 'italic',
           fontSize: '1.6rem',
           color: 'var(--gold)',
@@ -179,11 +179,11 @@ export default function LoveLetter({ visible }) {
       {/* ── Message ── */}
       <Section>
         <div style={{ ...s.card, padding: '40px 36px', position: 'relative', boxShadow: 'var(--glow-pink), inset 0 1px 0 rgba(255,255,255,0.08)', margin: '0 0 48px' }}>
-          <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '5rem', color: '#ff4d6d', opacity: 0.35, position: 'absolute', top: 12, left: 16, lineHeight: 0.5 }}>"</span>
-          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', lineHeight: 1.9, textAlign: 'center', position: 'relative', zIndex: 1, padding: '10px 24px', color: 'var(--text-white)' }}>
+          <span style={{ fontFamily: "'Lora', serif", fontSize: '5rem', color: '#ff4d6d', opacity: 0.35, position: 'absolute', top: 12, left: 16, lineHeight: 0.5 }}>"</span>
+          <p style={{ fontFamily: "'Lora', serif", fontSize: '1.25rem', fontStyle: 'italic', lineHeight: 1.9, textAlign: 'center', position: 'relative', zIndex: 1, padding: '10px 24px', color: 'var(--text-white)' }}>
             {msgLines}
           </p>
-          <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '5rem', color: '#ff4d6d', opacity: 0.35, position: 'absolute', bottom: -16, right: 16, lineHeight: 0.5, transform: 'rotate(180deg)' }}>"</span>
+          <span style={{ fontFamily: "'Lora', serif", fontSize: '5rem', color: '#ff4d6d', opacity: 0.35, position: 'absolute', bottom: -16, right: 16, lineHeight: 0.5, transform: 'rotate(180deg)' }}>"</span>
         </div>
       </Section>
 
@@ -210,8 +210,8 @@ export default function LoveLetter({ visible }) {
             <div key={item.label} style={{ ...s.card, padding: '20px 10px', textAlign: 'center' }}>
               <span style={{
                 display: 'block',
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 'clamp(1.6rem, 4vw, 2.2rem)',
+                fontFamily: "'Lora', serif",
+                fontSize: 'clamp(1.8rem, 5vw, 2.6rem)',
                 fontWeight: 700,
                 background: 'linear-gradient(135deg, #ff85a1, #c77dff)',
                 WebkitBackgroundClip: 'text',
@@ -223,7 +223,7 @@ export default function LoveLetter({ visible }) {
             </div>
           ))}
         </div>
-        <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.1rem', color: 'var(--text-soft)' }}>
+        <p style={{ fontFamily: "'Lora', serif", fontSize: '1.1rem', color: 'var(--text-soft)' }}>
           Sejak <strong style={{ color: 'var(--pink-mid)' }}>{dateLabel}</strong>
         </p>
       </Section>
@@ -244,8 +244,8 @@ export default function LoveLetter({ visible }) {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
             <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: 2, color: 'var(--pink-mid)' }}>Lagu Kita 🎶</span>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem' }}>{cfg.song}</span>
-            <span style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1rem', color: 'var(--text-soft)' }}>Because you are perfect to me 🎵</span>
+            <span style={{ fontFamily: "'Lora', serif", fontSize: '1.3rem' }}>{cfg.song}</span>
+            <span style={{ fontFamily: "'Lora', serif", fontSize: '1rem', color: 'var(--text-soft)' }}>Because you are perfect to me 🎵</span>
           </div>
         </div>
       </Section>
@@ -269,7 +269,7 @@ export default function LoveLetter({ visible }) {
         <div style={{ ...s.card, padding: '40px', textAlign: 'center', boxShadow: 'var(--glow-pink)', position: 'relative', overflow: 'hidden' }}>
           <span style={{ fontSize: '3rem', display: 'block', marginBottom: 14, animation: 'bigBeat 1.2s ease-in-out infinite' }}>💍</span>
           <h3 style={{
-            fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', marginBottom: 24,
+            fontFamily: "'Lora', serif", fontSize: '1.6rem', marginBottom: 24,
             background: 'linear-gradient(135deg, #ff85a1, #c77dff)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           }}>Janjiku Untukmu</h3>
@@ -285,14 +285,14 @@ export default function LoveLetter({ visible }) {
       <Section style={{ textAlign: 'center', padding: '40px 20px' }}>
         <div style={{ fontSize: '5rem', display: 'block', marginBottom: 18, animation: 'bigBeat 1.2s ease-in-out infinite', filter: 'drop-shadow(0 0 30px rgba(255,77,109,0.8))' }}>❤️</div>
         <h2 style={{
-          fontFamily: "'Playfair Display', serif",
-          fontSize: 'clamp(2.5rem, 8vw, 4rem)',
+          fontFamily: "'Lora', serif",
+          fontSize: 'clamp(2.8rem, 8vw, 4.5rem)',
           background: 'linear-gradient(135deg, #ff85a1, #ffd700, #c77dff)',
           WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
           marginBottom: 12,
         }}>Aku Cinta Kamu</h2>
-        <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.4rem', color: 'var(--text-soft)', marginBottom: 24 }}>Sekarang, besok, dan selamanya 💕</p>
-        <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.1rem', color: 'var(--pink-mid)', fontStyle: 'italic' }}>— Dengan sepenuh hati</p>
+        <p style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.2rem', color: 'var(--text-soft)', marginBottom: 20 }}>Sekarang, besok, dan selamanya 💕</p>
+        <p style={{ fontFamily: "'Lora', serif", fontStyle: 'italic', fontSize: '1rem', color: 'var(--pink-mid)' }}>— Dengan sepenuh hati</p>
       </Section>
 
       <footer style={{ textAlign: 'center', padding: '16px', color: 'rgba(255,133,161,0.4)', fontSize: '0.82rem' }}>
@@ -330,7 +330,7 @@ export default function LoveLetter({ visible }) {
             boxShadow: 'var(--glow-pink), var(--glow-purple)',
           }}>
             <h3 style={{
-              fontFamily: "'Playfair Display', serif", fontSize: '1.5rem',
+              fontFamily: "'Cormorant Garamond', serif", fontSize: '1.5rem',
               marginBottom: 24, textAlign: 'center',
               background: 'linear-gradient(135deg, #ff85a1, #c77dff)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
