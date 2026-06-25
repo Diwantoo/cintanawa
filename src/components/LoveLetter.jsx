@@ -239,7 +239,7 @@ export default function LoveLetter({ visible }) {
           border: '1px solid rgba(199,125,255,0.3)',
         }}>
           <iframe
-            src="https://www.youtube.com/embed/cNGjD0VG4R8?autoplay=1&loop=1&playlist=cNGjD0VG4R8&rel=0&modestbranding=1&color=white"
+            src="https://www.youtube.com/embed/lwcYufwSmDc?autoplay=1&loop=1&playlist=lwcYufwSmDc&rel=0&modestbranding=1&color=white"
             title="Lagu Kita"
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
