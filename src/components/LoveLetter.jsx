@@ -199,7 +199,7 @@ export default function LoveLetter({ visible }) {
 
       {/* ── Counter ── */}
       <Section style={{ marginBottom: 48, textAlign: 'center' }}>
-        <h2 style={s.sectionTitle}>Kamu Udah Bareng Aku Selama <span style={{ display: 'inline-block', animation: 'spinVinyl 2s linear infinite' }}>⏳</span></h2>
+        <h2 style={s.sectionTitle}>Kamu Udah Bareng Aku Selama <HourglassTick /></h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 14 }}>
           {[
             { label: 'Hari', val: time.d },
@@ -445,6 +445,25 @@ function ReasonCard({ icon, text, delay }) {
         {text.split('\n').map((l, i) => <span key={i}>{l}{i === 0 && <br />}</span>)}
       </p>
     </div>
+  );
+}
+
+function HourglassTick() {
+  const [flip, setFlip] = useState(false);
+  useEffect(() => {
+    const id = setInterval(() => setFlip(f => !f), 800);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span style={{
+      display: 'inline-block',
+      filter: 'brightness(0) invert(1)',
+      fontSize: '0.9em',
+      transition: 'transform 0.4s ease',
+      transform: flip ? 'rotate(180deg)' : 'rotate(0deg)',
+    }}>
+      {flip ? '⌛' : '⏳'}
+    </span>
   );
 }
 
