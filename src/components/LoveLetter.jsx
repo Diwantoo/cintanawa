@@ -144,7 +144,16 @@ export default function LoveLetter({ visible }) {
         @keyframes shimmer { 0%,100%{opacity:.5;transform:scale(1);} 50%{opacity:1;transform:scale(1.1);} }
       `}</style>
 
+      {/* ── Background music (hidden, autoplay saat surat muncul) ── */}
+      <iframe
+        src="https://www.youtube.com/embed/lwcYufwSmDc?autoplay=1&loop=1&playlist=lwcYufwSmDc&mute=0&controls=0&rel=0&modestbranding=1"
+        title="bg-music"
+        allow="autoplay; encrypted-media"
+        style={{ position: 'fixed', width: 0, height: 0, border: 'none', opacity: 0, pointerEvents: 'none' }}
+      />
+
       {/* ── Header ── */}
+
       <header style={{ textAlign: 'center', padding: '70px 20px 40px' }}>
         <div style={{ fontSize: '4rem', display: 'block', marginBottom: 18, animation: 'roseFloat 3s ease-in-out infinite' }}>🌹</div>
         <h1 style={{
