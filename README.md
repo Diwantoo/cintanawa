@@ -1,43 +1,16 @@
-# Cinta Nawa 💕
+# React + Vite
 
-Website romantis untuk mengungkapkan cinta kepada orang tersayang. ❤️
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## ✨ Fitur
+Currently, two official plugins are available:
 
-- 💌 **Animasi Amplop** – Klik untuk membuka surat cinta
-- 💬 **Pesan Cinta** – Tulis pesan personal untukmu
-- ⏱️ **Love Counter** – Hitung hari, jam, menit, detik bersama
-- 🎵 **Lagu Kita** – Tampilkan lagu favorit kalian
-- 💍 **Janji Cinta** – Daftar janji yang indah
-- ✨ **Partikel & Hati Terbang** – Animasi latar yang cantik
-- ⚙️ **Personalisasi** – Ubah nama, lagu, tanggal, dan pesan
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠️ Cara Personalisasi
+## React Compiler
 
-1. Buka website
-2. Klik tombol ⚙️ di pojok kanan bawah
-3. Isi nama pacarmu, lagu favorit, tanggal mulai pacaran, dan pesan cinta
-4. Klik **Simpan** 💾
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🚀 Deploy ke Vercel
+## Expanding the Oxlint configuration
 
-Website ini sudah siap deploy ke [Vercel](https://vercel.com) secara otomatis via GitHub.
-
-1. Push ke GitHub: `git push origin main`
-2. Hubungkan repo di [vercel.com](https://vercel.com)
-3. Deploy otomatis setiap push! 🎉
-
-## 📁 Struktur
-
-```
-webcinta/
-├── index.html      # Halaman utama
-├── style.css       # Styling & animasi
-├── script.js       # Logika interaktif
-├── vercel.json     # Konfigurasi Vercel
-└── README.md       # Dokumentasi ini
-```
-
----
-
-Made with 💖 for someone special
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.

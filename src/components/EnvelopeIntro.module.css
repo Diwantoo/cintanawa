@@ -1,0 +1,233 @@
+/* ============================================================
+   EnvelopeIntro.module.css
+   ============================================================ */
+
+/* ── Wrapper ── */
+.wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 10;
+  background: radial-gradient(ellipse at center, #1a0010 0%, #0d0008 100%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fading {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+}
+
+/* ── Ambient orbs ── */
+.orb1,
+.orb2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: orbFloat 6s ease-in-out infinite alternate;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 77, 109, 0.15);
+  top: -80px;
+  left: -80px;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(199, 125, 255, 0.12);
+  bottom: -60px;
+  right: -60px;
+  animation-delay: 3s;
+}
+
+@keyframes orbFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.08); }
+}
+
+/* ── Top hint ── */
+.hint {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  color: rgba(255, 179, 198, 0.7);
+  letter-spacing: 0.5px;
+  animation: fadeIn 1.2s ease both;
+}
+
+/* ── Envelope container ── */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 210px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 40px rgba(255, 77, 109, 0.55));
+  transition: transform 0.35s ease, filter 0.35s ease;
+  animation: entrancePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.envelope:hover {
+  transform: translateY(-8px) scale(1.04);
+  filter: drop-shadow(0 0 70px rgba(255, 77, 109, 0.85));
+}
+
+@keyframes entrancePop {
+  from { transform: scale(0.5) translateY(40px); opacity: 0; }
+  to   { transform: scale(1) translateY(0);       opacity: 1; }
+}
+
+/* ── Envelope back/base ── */
+.backFlap {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #a0112e, #800f2f);
+  border-radius: 8px 8px 12px 12px;
+}
+
+/* ── Side triangles (left & right inner flaps) ── */
+.leftFlap,
+.rightFlap {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  z-index: 2;
+}
+
+.leftFlap {
+  left: 0;
+  border-bottom: 105px solid #c9184a;
+  border-right: 150px solid transparent;
+}
+
+.rightFlap {
+  right: 0;
+  border-bottom: 105px solid #c9184a;
+  border-left: 150px solid transparent;
+}
+
+/* ── Top flap (folds open) ── */
+.topFlap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 110px solid #e63459;
+  transform-origin: top center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+.open .topFlap {
+  transform: rotateX(180deg);
+}
+
+/* ── Front face overlay ── */
+.front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 175px;
+  background: linear-gradient(160deg, #ff4d6d 0%, #c9184a 100%);
+  border-radius: 4px 4px 12px 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Wax seal ── */
+.seal {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffd700, #e09000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 0 0 4px rgba(255,215,0,0.3), 0 4px 16px rgba(0,0,0,0.4);
+  animation: sealPulse 2s ease-in-out infinite;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.open .seal {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+@keyframes sealPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(255,215,0,0.3), 0 4px 16px rgba(0,0,0,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(255,215,0,0.15), 0 4px 24px rgba(0,0,0,0.5); }
+}
+
+/* ── Card that slides out ── */
+.card {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  width: 240px;
+  background: linear-gradient(135deg, #fff5f8, #ffe0ea);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  opacity: 0;
+  transition:
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s,
+    opacity 0.5s ease 0.2s;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+}
+
+.open .card {
+  transform: translateX(-50%) translateY(-170px);
+  opacity: 1;
+}
+
+.cardText {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  color: #c9184a;
+  font-weight: 700;
+}
+
+.cardSub {
+  font-size: 0.8rem;
+  color: #800f2f;
+  opacity: 0.7;
+}
+
+/* ── Bottom tap hint ── */
+.tapHint {
+  font-size: 0.82rem;
+  color: rgba(255, 179, 198, 0.5);
+  letter-spacing: 0.5px;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
