@@ -199,7 +199,7 @@ export default function LoveLetter({ visible }) {
 
       {/* ── Counter ── */}
       <Section style={{ marginBottom: 48, textAlign: 'center' }}>
-        <h2 style={s.sectionTitle}>Udah Bareng Lo Selama Ini ⏳</h2>
+        <h2 style={s.sectionTitle}>Kamu Udah Bareng Aku Selama ⏳</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 14 }}>
           {[
             { label: 'Hari', val: time.d },
