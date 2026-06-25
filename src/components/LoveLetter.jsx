@@ -1,9 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 
+import photo1 from '../assets/WhatsApp Image 2026-06-25 at 07.51.36.jpeg';
+import photo2 from '../assets/WhatsApp Image 2026-06-25 at 07.51.36 (1).jpeg';
+import photo3 from '../assets/WhatsApp Image 2026-06-25 at 07.51.37.jpeg';
+import photo4 from '../assets/WhatsApp Image 2026-06-25 at 07.51.37 (1).jpeg';
+import photo5 from '../assets/WhatsApp Image 2026-06-25 at 07.51.38.jpeg';
+import photo6 from '../assets/WhatsApp Image 2026-06-25 at 07.51.38 (1).jpeg';
+import photo7 from '../assets/WhatsApp Image 2026-06-25 at 07.51.39.jpeg';
+import photo8 from '../assets/WhatsApp Image 2026-06-25 at 07.51.40.jpeg';
+
+const PHOTOS = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8];
+
 const DEFAULT = {
   name: 'Sayangku ✨',
   song: 'Perfect - Ed Sheeran',
-  startDate: '2024-01-01',
+  startDate: '2026-03-13',
   message:
     'Dari semua hal indah di dunia ini,\nkamu adalah yang paling berharga bagiku. 🌸\n\nSetiap hari bersamamu terasa seperti mimpi\nyang tak ingin aku akhiri. Terima kasih\nsudah hadir dan mewarnai hidupku. 💫',
 };
@@ -239,6 +250,20 @@ export default function LoveLetter({ visible }) {
         </div>
       </Section>
 
+      {/* ── Photo Gallery ── */}
+      <Section style={{ marginBottom: 48 }}>
+        <h2 style={s.sectionTitle}>Kenangan Kita 📸</h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+          gap: 14,
+        }}>
+          {PHOTOS.map((src, i) => (
+            <PhotoCard key={i} src={src} index={i} />
+          ))}
+        </div>
+      </Section>
+
       {/* ── Promises ── */}
       <Section style={{ marginBottom: 48 }}>
         <div style={{ ...s.card, padding: '40px', textAlign: 'center', boxShadow: 'var(--glow-pink)', position: 'relative', overflow: 'hidden' }}>
@@ -408,6 +433,112 @@ function ReasonCard({ icon, text, delay }) {
         {text.split('\n').map((l, i) => <span key={i}>{l}{i === 0 && <br />}</span>)}
       </p>
     </div>
+  );
+}
+
+function PhotoCard({ src, index }) {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+  const [lightbox, setLightbox] = useState(false);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVis(true); }, { threshold: 0.1 });
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // Random slight rotation for polaroid feel
+  const rotate = [-2.5, 1.8, -1.2, 2.1, -1.8, 2.8, -2.2, 1.5][index % 8];
+
+  return (
+    <>
+      <div
+        ref={ref}
+        onClick={() => setLightbox(true)}
+        style={{
+          background: 'rgba(255,255,255,0.95)',
+          borderRadius: 4,
+          padding: '10px 10px 30px',
+          cursor: 'pointer',
+          opacity: vis ? 1 : 0,
+          transform: vis ? `rotate(${rotate}deg)` : 'translateY(30px) scale(0.9)',
+          transition: `opacity 0.6s ease ${index * 0.07}s, transform 0.6s ease ${index * 0.07}s`,
+          boxShadow: '0 4px 20px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.1)',
+          aspectRatio: '1',
+          overflow: 'hidden',
+          position: 'relative',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'rotate(0deg) scale(1.06)';
+          e.currentTarget.style.boxShadow = '0 12px 40px rgba(255,77,109,0.5), 0 1px 0 rgba(255,255,255,0.1)';
+          e.currentTarget.style.zIndex = '10';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = `rotate(${rotate}deg) scale(1)`;
+          e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.1)';
+          e.currentTarget.style.zIndex = '1';
+        }}
+      >
+        <img
+          src={src}
+          alt={`Kenangan ${index + 1}`}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+            borderRadius: 2,
+          }}
+        />
+        <div style={{
+          position: 'absolute',
+          bottom: 4,
+          left: 0, right: 0,
+          textAlign: 'center',
+          fontSize: '1rem',
+        }}>💕</div>
+      </div>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(false)}
+          style={{
+            position: 'fixed', inset: 0,
+            background: 'rgba(0,0,0,0.92)',
+            backdropFilter: 'blur(10px)',
+            zIndex: 999,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            cursor: 'zoom-out',
+            padding: 20,
+          }}
+        >
+          <img
+            src={src}
+            alt={`Kenangan ${index + 1}`}
+            style={{
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              objectFit: 'contain',
+              borderRadius: 12,
+              boxShadow: '0 0 60px rgba(255,77,109,0.4)',
+              animation: 'revealLetter 0.3s ease both',
+            }}
+          />
+          <button
+            onClick={() => setLightbox(false)}
+            style={{
+              position: 'fixed', top: 20, right: 24,
+              background: 'rgba(255,77,109,0.8)',
+              border: 'none', borderRadius: '50%',
+              width: 40, height: 40,
+              color: '#fff', fontSize: '1.1rem',
+              cursor: 'pointer',
+            }}
+          >✕</button>
+        </div>
+      )}
+    </>
   );
 }
 
